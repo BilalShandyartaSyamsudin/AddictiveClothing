@@ -4,13 +4,17 @@ namespace App\Http\Controllers\page;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class profileController extends Controller
 {
     
     public function index()
     {
-        return view('profile.profile');
+         $user = User::findOrFail(Auth::id());
+
+        return view('profile.profile', compact('user'));
     }
 
 }
