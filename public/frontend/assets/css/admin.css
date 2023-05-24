@@ -1,0 +1,77 @@
+/* 
+======================================================================================
+UMUM
+======================================================================================
+*/
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+.container {
+    display: flex;
+}
+.sidebar {
+    background-color: rgb(204, 204, 204);
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    background-color: rgb(240, 180, 180);
+    height: 100vh;
+    width: 80%;
+}
+
+/* 
+======================================================================================
+SIDEBAR
+======================================================================================
+*/
+
+header a {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px 0 0 0;
+}
+
+.content {
+    padding: 45% 20%;
+}
+
+/* 
+======================================================================================
+INPUT
+======================================================================================
+*/
+
+form {
+    display: grid;/* Atur jumlah kolom di sini */
+    grid-gap: 10px; /* Atur jarak antara label dan input */
+    padding: 100px 0 100px 200px;
+    background-color: aquamarine;
+}
+
+section form input{
+  width: 200px;
+}
+
+/* 
+======================================================================================
+USER
+======================================================================================
+*/
+.container {
+  position: relative;
+}
+
+.item {
+    top: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
