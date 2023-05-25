@@ -16,5 +16,8 @@ class profileController extends Controller
 
         return view('profile.profile', compact('user'));
     }
+    public function ubah(){
+        return view('profile.ubahprofil');
+    }
 
 }

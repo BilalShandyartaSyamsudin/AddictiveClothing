@@ -11,6 +11,7 @@ Route::group(['namespace' => 'page'], function () {
         Route::get('/favorite', 'FavoriteController@index')->name('favorite');
         Route::get('/favorite/remove/{id}', 'FavoriteController@remove')->name('remove.favorite');
         Route::get('/profile', 'ProfileController@index')->name('profile');
+        Route::get('/ubah', 'ProfileController@ubah')->name('ubah');
     });
 });
 

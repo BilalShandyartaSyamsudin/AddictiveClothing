@@ -34,6 +34,7 @@
 <body>
     @include('profile.layouts.navbar')
     @yield('profile')
+    @yield('ubah')
     @include('profile.layouts.footer')
 
     {{-- JS File --}}

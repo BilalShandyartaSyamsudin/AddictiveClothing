@@ -1135,3 +1135,18 @@ section {
   bottom: 15px;
   right: 15px;
 }
+.box-base-ubah{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-ubah{
+    margin-top: 50px;
+    width: 1000px;
+    height: 70vh;
+    background-color: #ececec;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
