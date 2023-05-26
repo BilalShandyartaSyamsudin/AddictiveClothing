@@ -5,6 +5,7 @@ ROUTE PAGE
 Route::group(['namespace' => 'page'], function () {
     Route::get('/', 'homeController@index')->name('home.index');
     Route::get('/detail/{id_barang}', 'DetailController@show')->name('detail.show');
+    Route::get('/checkout/{id_barang}', 'CheckoutController@checkout')->name('checkout');
 
     Route::middleware('auth')->group(function () {
         Route::get('/favorite/add/{id}', 'homeController@addToFavorite')->name('add.favorite');
