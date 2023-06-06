@@ -6,6 +6,9 @@ Route::group(['namespace' => 'page'], function () {
     Route::get('/', 'homeController@index')->name('home.index');
     Route::get('/detail/{id_barang}', 'DetailController@show')->name('detail.show');
     Route::get('/checkout/{id_barang}', 'CheckoutController@checkout')->name('checkout');
+    Route::post('/checkout/process', 'PesananController@process')->name('checkout.add');
+    Route::get('/coba', 'PesananController@coba');
+
 
     Route::middleware('auth')->group(function () {
         Route::get('/favorite/add/{id}', 'homeController@addToFavorite')->name('add.favorite');
@@ -13,6 +16,7 @@ Route::group(['namespace' => 'page'], function () {
         Route::get('/favorite/remove/{id}', 'FavoriteController@remove')->name('remove.favorite');
         Route::get('/profile', 'ProfileController@index')->name('profile');
         Route::get('/ubah', 'ProfileController@ubah')->name('ubah');
+        Route::get('pesanan', 'PesananController@index')->name('pesanan');
     });
 });
 

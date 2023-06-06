@@ -102,16 +102,6 @@
                                         <a href="{{ route('detail.show', $barang->id_barang) }}">
                                             <button type="button" class="btn btn-outline-primary">Detail Produk</button>
                                         </a>
-                                        <!-- Tombol favorit hanya ditampilkan saat pengguna sudah login -->
-                                        @auth
-                                            <a href="{{ route('add.favorite', $barang->id_barang) }}" class="btn btn-outline-primary">Tambah Favorite</a>
-
-                                        @endauth
-                                        <!-- Jika pengguna belum login, tombol favorit akan mengarahkan ke halaman login -->
-                                        @guest
-                                            <a href="{{ route('login') }}" class="btn btn-outline-primary">Login untuk
-                                                Menambahkan ke Favorit</a>
-                                        @endguest
                                     </div>
                                     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js">
                                         $(document).ready(function() {

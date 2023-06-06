@@ -1154,9 +1154,9 @@ section {
 /*--------------------------------------------------------------
 # Checkout
 --------------------------------------------------------------*/
-/* .box-checkout{
-    display: flex;
-} */
+.box-checkout{
+    padding-bottom: 100px;
+}
 .title-checkout{
     font-size: 25px;
     padding: 50px 0 30px 200px;
@@ -1165,16 +1165,14 @@ section {
 }
 .column-checkout{
     display: flex;
-    align-items: center;
-    padding: 5px 0 10px 100px; 
+    padding-top: 20px;
 }
 .row-checkout{
-    margin-right: 500px;
+    /* kosong */
 }
 .img-produk img{
-    width: 128px;
-    height: 128px;
-    margin: 10px 30px 0 10px;
+    width: 400px;
+    height: 400px;
 }
 .box-pembayaran{
     width: 360px;
@@ -1191,9 +1189,7 @@ section {
 .box-pembayaran h1{
     padding-top: 10px;
 }
-/* .harga{
-    padding-left: 90px;
-} */
+
 .subtitle-pembayaran,
 .harga{
     padding-top: 20px;
@@ -1215,6 +1211,13 @@ section {
 .fa-sharp{
     margin-right: 20px;
 }
-/* .fa-solid{
 
-} */
+/*--------------------------------------------------------------
+# Pesanan
+--------------------------------------------------------------*/
+.container-pesanan{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
