@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
 /* 
 ======================================================================================
 UMUM
@@ -10,7 +12,7 @@ body {
     height: 100vh;
     width: 100%;
 }
-.container {
+.base-container {
     display: flex;
 }
 .sidebar {
@@ -21,7 +23,6 @@ body {
     flex-direction: column;
 }
 .main {
-    background-color: rgb(240, 180, 180);
     height: 100vh;
     width: 80%;
 }
@@ -48,30 +49,40 @@ header a {
 INPUT
 ======================================================================================
 */
-
-form {
-    display: grid;/* Atur jumlah kolom di sini */
-    grid-gap: 10px; /* Atur jarak antara label dan input */
-    padding: 100px 0 100px 200px;
-    background-color: aquamarine;
+.form{
+    margin: 100px 0 0 100px;
+}
+.form-container {
+    width: 400px;
 }
 
-section form input{
-  width: 200px;
+header div h1{
+    padding: 50px 0 0 20px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
+/* 
+======================================================================================
+BaRANG
+======================================================================================
+*/
+.btn-edit a, 
+.btn-hapus button{
+    width: 100px;
+    margin: 5px;
+}
 /* 
 ======================================================================================
 USER
 ======================================================================================
 */
 .container {
-  position: relative;
+    position: relative;
 }
 
 .item {
     top: 100px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }

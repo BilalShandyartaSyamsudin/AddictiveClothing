@@ -1,8 +1,13 @@
 @extends('pengelola.layouts.base')
 @section('barang')
+    <header>
+        <div class="h1">
+            <h1>Tabel Barang</h1>
+        </div>
+    </header>
     <section class="container">
         <div class="item">
-            <table border="1">
+            <table class="table-bordered table"">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -26,12 +31,19 @@
                             <td>{{ $barang->created_at }}</td>
                             <td>{{ $barang->updated_at }}</td>
                             <td>
-                               <a href="{{ route('barang.edit', $barang->id_barang) }}">Edit</a>
-                                <form action="{{ route('barang.delete', $barang->id_barang) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
-                                </form>
+                                <div class="btn-edit">
+                                    <a href="{{ route('barang.edit', $barang->id_barang) }}" class="btn btn-warning">Edit</a>
+                                </div>
+                                <div class="btn-hapus">
+                                    <form action="{{ route('barang.delete', $barang->id_barang) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"
+                                            class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </div>
+
                             </td>
                         </tr>
                     @endforeach
