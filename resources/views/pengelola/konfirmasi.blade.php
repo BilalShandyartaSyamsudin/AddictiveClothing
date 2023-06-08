@@ -1,10 +1,10 @@
 @extends('pengelola.layouts.template')
-@section('user')
+@section('konfirmasi')
 <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>User</h2>
+                <h2>Konfirmasi Status Pesanan</h2>
             </div>
 
         </div>
@@ -17,18 +17,18 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Nomor HP</th>
-                        <th>Alamat</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone_number }}</td>
-                            <td>{{ $user->address }}</td>
+                            <td>{{ $user->user->name }}</td>
+                            <td>{{ $user->user->email }}</td>
+                            <td>{{ $user->status }}</td>
+                            <td><a href="{{ route('konfirmasi-user', ['id' => $user->id]) }}" class="btn btn-warning">Konfirmasi</a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -30,7 +30,7 @@ class ApiRegisterController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->phone_number = $request->phone;
+        $user->phone_number = $request->phone_number;
         $user->address = $request->address;
         $user->password = Hash::make($request->password);
         $user->save();

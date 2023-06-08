@@ -1,13 +1,16 @@
-@extends('pengelola.layouts.base')
+@extends('pengelola.layouts.template')
 @section('barang')
-    <header>
-        <div class="h1">
-            <h1>Tabel Barang</h1>
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Barang</h2>
+            </div>
+
         </div>
-    </header>
-    <section class="container">
-        <div class="item">
-            <table class="table-bordered table"">
+    </section>
+        <div class="container-barang">
+            <table class="table-bordered table">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -50,5 +53,4 @@
                 </tbody>
             </table>
         </div>
-    </section>
 @endsection

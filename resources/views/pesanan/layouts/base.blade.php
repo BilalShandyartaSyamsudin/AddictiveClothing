@@ -32,9 +32,8 @@
 </head>
 
 <body>
-    @include('details.layouts.navbar')
+    @include('pesanan.layouts.navbar')
     @yield('pesanan')
-    @include('details.layouts.footer')
 
     {{-- JS File --}}
     <script src={{ asset('frontend/assets/js/main.js') }}></script>

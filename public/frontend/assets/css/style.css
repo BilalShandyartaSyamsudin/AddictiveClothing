@@ -1167,9 +1167,6 @@ section {
     display: flex;
     padding-top: 20px;
 }
-.row-checkout{
-    /* kosong */
-}
 .img-produk img{
     width: 400px;
     height: 400px;
@@ -1216,8 +1213,7 @@ section {
 # Pesanan
 --------------------------------------------------------------*/
 .container-pesanan{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
 }

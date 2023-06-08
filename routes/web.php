@@ -34,6 +34,9 @@ Route::group(['namespace' => 'admin'], function (){
     Route::delete('/barang/{id_barang}', 'BarangController@destroy')->name('barang.delete');
     Route::get('/barang/{id_barang}/edit', 'BarangController@edit')->name('barang.edit');
     Route::put('/barang/{id_barang}', 'BarangController@update')->name('barang.update');
+    Route::get('/konfirmasi', 'UserKonfirmasiController@index')->name('konfirmasi');
+    Route::get('/konfirmasi/{id}', 'UserKonfirmasiController@konfirmasi')->name('konfirmasi-user');
+    Route::put('/konfirmasi/{id}/update', 'UserKonfirmasiController@update')->name('konfirmasi-update');
 });
 /*================================================================
 ROUTE ACCOUNT

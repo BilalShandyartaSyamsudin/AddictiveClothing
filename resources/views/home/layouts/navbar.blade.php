@@ -15,6 +15,7 @@
                              <ul>
                                  <li class="nac-item"><a href="{{ route('profile') }}">PROFILE</a></li>
                                  <li class="nac-item"><a href="{{ route('favorite') }}">FAVORIT</a></li>
+                                 <li class="nac-item"><a href="{{ route('pesanan') }}">PESANAN SAYA</a></li>
                                  <li class="nav-item">
                                      <a href="">
                                          <form method="POST" action="{{ route('logout') }}">

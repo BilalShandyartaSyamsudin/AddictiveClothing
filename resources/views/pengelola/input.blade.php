@@ -1,10 +1,14 @@
-@extends('pengelola.layouts.base')
+@extends('pengelola.layouts.template')
 @section('input')
-    <header>
-        <div class="h1">
-            <h1>Input Barang</h1>
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Input Barang</h2>
+            </div>
+
         </div>
-    </header>
+    </section>
     <section class="form">
         <div class="form-container">
             <form action="{{ route('input.store') }}" method="POST">
