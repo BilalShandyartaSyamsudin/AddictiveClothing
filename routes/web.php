@@ -8,14 +8,13 @@ Route::group(['namespace' => 'page'], function () {
     Route::get('/checkout/{id_barang}', 'CheckoutController@checkout')->name('checkout');
     Route::post('/checkout/process', 'PesananController@process')->name('checkout.add');
     Route::get('/coba', 'PesananController@coba');
-
-
     Route::middleware('auth')->group(function () {
         Route::get('/favorite/add/{id}', 'homeController@addToFavorite')->name('add.favorite');
         Route::get('/favorite', 'FavoriteController@index')->name('favorite');
         Route::get('/favorite/remove/{id}', 'FavoriteController@remove')->name('remove.favorite');
         Route::get('/profile', 'ProfileController@index')->name('profile');
-        Route::get('/ubah', 'ProfileController@ubah')->name('ubah');
+        Route::get('/ubah', 'ProfileController@ubahshow')->name('ubah');
+        Route::post('profile/ubah', 'ProfileController@ubah')->name('profile.ubah');
         Route::get('pesanan', 'PesananController@index')->name('pesanan');
     });
 });

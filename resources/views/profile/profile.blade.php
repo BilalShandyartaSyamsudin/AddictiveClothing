@@ -17,8 +17,8 @@
                         <img src="{{ asset('frontend/assets/img/cat.jpg') }}" alt="Profil Picture"
                             class="img img-thumbnail rounded-circle w-50">
                         <h2>{{ $user->name }}</h2>
-                        <button type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-pencil"></i> Ubah
-                            Profile</button>
+                        <a class="btn btn-primary btn-sm" href="{{ route('ubah') }}"><i class="fa-solid fa-pencil"></i> Ubah
+                            Profile</a>
                     </div>
                 </div>
             </div>

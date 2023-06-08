@@ -2,7 +2,7 @@
  <header id="header" class="fixed-top">
      <div class="d-flex align-items-center justify-content-between container">
 
-         <a href="home" class="logo"><span class="text-dark">Addictive</span> Clothing</a>
+         <a href="{{ route('home.index') }}" class="logo"><span class="text-dark">Addictive</span> Clothing</a>
          <!-- Uncomment below if you prefer to use text as a logo -->
          <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
