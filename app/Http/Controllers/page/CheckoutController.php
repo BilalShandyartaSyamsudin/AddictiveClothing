@@ -16,37 +16,36 @@ class CheckoutController extends Controller
     {
         $barang = Barang::find($id_barang);
         $checkout = Pesanan::where('barang_id', $id_barang)->first();
-        $total = $this->hitungTotal($barang->harga, $checkout->ongkir);
-        return view('checkout.checkout', compact('barang', 'checkout', 'total'));
+        return view('checkout.checkout', compact('barang', 'checkout'));
     }
 
-    private function hitungTotal($harga, $ongkir)
-    {
-        $harga = $this->formatAngka($harga);
-        $ongkir = $this->formatAngka($ongkir);
+    // private function hitungTotal($harga, $ongkir)
+    // {
+    //     $harga = $this->formatAngka($harga);
+    //     $ongkir = $this->formatAngka($ongkir);
 
-        $total = $this->jumlahkanHargaOngkir($harga, $ongkir);
+    //     $total = $this->jumlahkanHargaOngkir($harga, $ongkir);
 
-        return $total;
-    }
+    //     return $total;
+    // }
 
-    private function formatAngka($nilai)
-    {
-        $nilai = str_replace('.', '', $nilai);
-        $nilai = str_replace(',', '.', $nilai);
+    // private function formatAngka($nilai)
+    // {
+    //     $nilai = str_replace('.', '', $nilai);
+    //     $nilai = str_replace(',', '.', $nilai);
 
-        return $nilai;
-    }
+    //     return $nilai;
+    // }
 
-    private function jumlahkanHargaOngkir($harga, $ongkir)
-    {
-        $currency = new Currency('IDR');
+    // private function jumlahkanHargaOngkir($harga, $ongkir)
+    // {
+    //     $currency = new Currency('IDR');
 
-        $harga = new Money($harga, $currency);
-        $ongkir = new Money($ongkir, $currency);
+    //     $harga = new Money($harga, $currency);
+    //     $ongkir = new Money($ongkir, $currency);
 
-        $total = $harga->add($ongkir);
+    //     $total = $harga->add($ongkir);
 
-        return $total->getAmount();
-    }
+    //     return $total->getAmount();
+    // }
 }

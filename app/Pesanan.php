@@ -9,7 +9,7 @@ class Pesanan extends Model
     protected $table = 'pesanan';
 
     protected $fillable = [
-        'user_id', 'barang_id', 'status', 'alamat', 'nomor_hp', 'provinsi', 'kabupaten', 'kode_pos', 'metode_pembayaran', 'ongkir', 'total'
+        'user_id', 'barang_id', 'status', 'alamat', 'nomor_hp', 'provinsi', 'kabupaten', 'kode_pos', 'metode_pembayaran', 'ongkir', 'total', 'bukti'
     ];
 
     public static function simpanPesanan($barang, $checkout)

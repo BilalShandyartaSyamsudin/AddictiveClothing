@@ -15,7 +15,9 @@ Route::group(['namespace' => 'page'], function () {
         Route::get('/profile', 'ProfileController@index')->name('profile');
         Route::get('/ubah', 'ProfileController@ubahshow')->name('ubah');
         Route::post('profile/ubah', 'ProfileController@ubah')->name('profile.ubah');
-        Route::get('pesanan', 'PesananController@index')->name('pesanan');
+        Route::get('/pesanan', 'PesananController@index')->name('pesanan');
+        Route::get('/pesanan/bayar/{id}', 'PesananController@showBayar')->name('bayar');
+        Route::post('/pesanan/bayar/{id}/upload-bukti', 'PesananController@uploadBukti')->name('pesanan.upload');
     });
 });
 
@@ -23,20 +25,22 @@ Route::group(['namespace' => 'page'], function () {
 ROUTE ADMIN
 */
 Route::group(['namespace' => 'admin'], function (){
-    Route::get('/input', 'InputController@index')->name('input');
-    Route::post('/input', 'InputController@store')->name('input.store');
-    Route::get('/input/success', function () {
-        return view('pengelola.input');
-    })->name('input.success');
-    Route::get('/user', 'UserController@index')->name('user');
-    Route::delete('/user/{id}', 'UserController@destroy')->name('user.delete');
-    Route::get('/barang', 'BarangController@index')->name('barang');
-    Route::delete('/barang/{id_barang}', 'BarangController@destroy')->name('barang.delete');
-    Route::get('/barang/{id_barang}/edit', 'BarangController@edit')->name('barang.edit');
-    Route::put('/barang/{id_barang}', 'BarangController@update')->name('barang.update');
-    Route::get('/konfirmasi', 'UserKonfirmasiController@index')->name('konfirmasi');
-    Route::get('/konfirmasi/{id}', 'UserKonfirmasiController@konfirmasi')->name('konfirmasi-user');
-    Route::put('/konfirmasi/{id}/update', 'UserKonfirmasiController@update')->name('konfirmasi-update');
+    Route::middleware('auth', 'admin.only')->group(function () {
+        Route::get('/input', 'InputController@index')->name('input');
+        Route::post('/input', 'InputController@store')->name('input.store');
+        Route::get('/input/success', function () {
+            return view('pengelola.input');
+        })->name('input.success');
+        Route::get('/user', 'UserController@index')->name('user');
+        Route::delete('/user/{id}', 'UserController@destroy')->name('user.delete');
+        Route::get('/barang', 'BarangController@index')->name('barang');
+        Route::delete('/barang/{id_barang}', 'BarangController@destroy')->name('barang.delete');
+        Route::get('/barang/{id_barang}/edit', 'BarangController@edit')->name('barang.edit');
+        Route::put('/barang/{id_barang}', 'BarangController@update')->name('barang.update');
+        Route::get('/konfirmasi', 'UserKonfirmasiController@index')->name('konfirmasi');
+        Route::get('/konfirmasi/{id}', 'UserKonfirmasiController@konfirmasi')->name('konfirmasi-user');
+        Route::put('/konfirmasi/{id}/update', 'UserKonfirmasiController@update')->name('konfirmasi-update');
+    });
 });
 /*================================================================
 ROUTE ACCOUNT

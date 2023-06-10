@@ -29,6 +29,8 @@ class Authenticate extends Middleware
             return redirect()->guest('login');
         }
     }
+    
+    
 
     return $next($request);
 }

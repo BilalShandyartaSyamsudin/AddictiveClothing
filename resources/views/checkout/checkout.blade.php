@@ -48,10 +48,10 @@
                                 {!! FormFacade::number('kode_pos', null, ['class' => 'form-control']) !!}
                             </label>
                             <h3 class="text-judul mt-5">Metode Pembayaran</h3>
-                            <label class="w-100 mb-3 rounded border p-2">
+                            {{-- <label class="w-100 mb-3 rounded border p-2">
                                 {!! FormFacade::radio('pembayaran', 'Transfer Bank') !!}
                                 Transfer Bank
-                            </label>
+                            </label> --}}
                             <label class="w-100 mb-3 rounded border p-2">
                                 {!! FormFacade::radio('pembayaran', 'Cash on Delivery (COD)') !!}
                                 Cash on Delivery (COD)
@@ -62,22 +62,22 @@
                                     <h3 class="text-judul">Detail Pembayaran</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row mt-2 mb-2">
+                                    {{-- <div class="row mt-2 mb-2">
                                         <div class="col-md"><small>Biaya pengiriman</small></div>
                                         <div class="col-md">Rp. {{ $checkout->ongkir }}</div>
-                                    </div>
+                                    </div> --}}
                                     <div class="row mt-2 mb-2">
                                         <div class="col-md"><small>Harga</small></div>
                                         <div class="col-md">Rp. {{ $barang->harga }}</div>
                                     </div>
                                     {{-- Total --}}
-                                    @if ($barang && $checkout)
+                                    {{-- @if ($barang && $checkout)
                                         <div class="row mt-2 mb-2">
                                             <div class="col-md"><small>Total</small></div>
                                             <div class="col-md">Rp. {{ number_format($total, 0, ',', '.') }}</div>
                                             {!! FormFacade::hidden('total', $total) !!}
                                         </div>
-                                    @endif
+                                    @endif --}}
                                 </div>
                                 <div class="card-footer">
                                     {!! FormFacade::submit('CHECKOUT', ['class' => 'btn btn-success w-100']) !!}

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ApiAuthController extends Controller
 {
-  public function login(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -28,6 +28,16 @@ class ApiAuthController extends Controller
         }
 
         return response()->json(['error' => 'Email atau password salah.'], 401);
+    }
+
+    public function profile(Request $request)
+    {
+        $user = User::findOrFail($request->user()->id);
+
+        return response()->json([
+            'data' => $user,
+            'message' => 'Data profil ditemukan.',
+        ]);
     }
 
     public function logout(Request $request)

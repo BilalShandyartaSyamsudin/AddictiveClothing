@@ -9,10 +9,17 @@ use App\User;
 
 class UserController extends Controller
 {
-    public function viewLoggedInUser(Request $request)
+    // Fungsi untuk menampilkan profil pengguna
+    public function show(Request $request)
     {
-        $userId = Auth::id();
-        $user = User::find($userId);
-        return response()->json($user);
+        $user = Auth::user(); // Mendapatkan objek pengguna yang diautentikasi menggunakan Sanctum
+
+        return response()->json([
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
+            'phone_number' => $user->phone_number, 
+            'address' => $user->address
+        ]);
     }
 }

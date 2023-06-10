@@ -34,6 +34,7 @@
 <body>
     @include('pesanan.layouts.navbar')
     @yield('pesanan')
+    @yield('bayar')
 
     {{-- JS File --}}
     <script src={{ asset('frontend/assets/js/main.js') }}></script>

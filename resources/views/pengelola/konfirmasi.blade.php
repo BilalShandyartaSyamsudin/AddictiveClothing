@@ -17,6 +17,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
+                        <th>Metode</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -27,6 +28,7 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->user->name }}</td>
                             <td>{{ $user->user->email }}</td>
+                            <td>{{ $user->metode_pembayaran }}</td>
                             <td>{{ $user->status }}</td>
                             <td><a href="{{ route('konfirmasi-user', ['id' => $user->id]) }}" class="btn btn-warning">Konfirmasi</a></td>
                         </tr>

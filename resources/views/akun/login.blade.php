@@ -21,12 +21,6 @@
                         {{ $errors->first() }}
                     </div>
                 @endif
-
-                <div class="input-group d-flex justify-content-between mb-5">
-                    <div class="forgot">
-                        <small><a href="#">Lupa Password?</a></small>
-                    </div>
-                </div>
                 <div class="input-group mb-3">
                     <button class="btn btn-lg btn-primary w-100 fs-6" type="submit">Masuk</button>
                 </div>

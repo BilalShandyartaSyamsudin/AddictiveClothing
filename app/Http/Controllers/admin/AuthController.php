@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('akun.login');
+        return view('pengelola.login');
     }
 
     public function login(Request $request)
@@ -25,11 +25,7 @@ class AuthController extends Controller
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
 
-        if (Auth::user()->role === 'admin') {
-                return redirect()->intended('/input');
-            } else {
-                return redirect()->intended('/');
-            }
+        return redirect()->intended('/');
     }
 
     return back()->withInput()->withErrors([
@@ -37,13 +33,13 @@ class AuthController extends Controller
     ]);
 }
 public function logout(Request $request)
-    {
-        Auth::logout();
+{
+    Auth::logout();
 
-        $request->session()->invalidate();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
 
-        $request->session()->regenerateToken();
+    return redirect('/');
+}
 
-        return redirect('/');
-    }
 }

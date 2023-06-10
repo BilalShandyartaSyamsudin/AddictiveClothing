@@ -9,7 +9,7 @@ use App\Barang;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CheckoutRequest;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\DB;
+
 
 class PesananController extends Controller
 {
@@ -31,7 +31,6 @@ class PesananController extends Controller
         $kodePos = $request->input('kode_pos');
         $nomorHp = $request->input('nomor_hp');
         $metodePembayaran = $request->input('pembayaran');
-        $total = $request->input('total'); 
 
         $checkout = new Pesanan();
         $checkout->user_id = $user->id;
@@ -42,15 +41,35 @@ class PesananController extends Controller
         $checkout->kode_pos = $kodePos;
         $checkout->nomor_hp = $nomorHp;
         $checkout->metode_pembayaran = $metodePembayaran;
-        $checkout->ongkir = 10000;
-        $checkout->total = $total;
         $checkout->save();
 
         return Redirect::route('pesanan')->with('success', 'Checkout berhasil');
     }
-
-    public function coba()
-    {
-        return view('pembayarans.pembayaran');
+    public function showBayar($id){
+        $pesanan = Pesanan::findOrFail($id);
+        return view('pesanan.bayar', compact('pesanan'));   
     }
+
+    public function uploadBukti(Request $request, $id)
+    {
+        // Memvalidasi request
+        $request->validate([
+            'bukti' => 'required|file|max:2048', // Menentukan validasi file, misalnya hanya menerima jenis file tertentu dan batasan ukuran file
+        ]);
+
+        // Mengambil file dari request
+        $file = $request->file('bukti');
+
+        // Menyimpan file ke direktori
+        $path = $file->store('bukti');
+
+        // Menyimpan nama file ke database
+        $pesanan = Pesanan::findOrFail($id);
+        $pesanan->bukti = $file->getClientOriginalName();
+        $pesanan->save();
+
+        // Memberikan respon berhasil kepada pengguna
+        return redirect()->back()->with('success', 'Bukti pembayaran berhasil diupload.');
+    }
+
 }

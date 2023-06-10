@@ -9,6 +9,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+}
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -1216,4 +1220,7 @@ section {
     padding: 30px;
     height: 100%;
     width: 100%;
+}
+.container-bayar{
+    padding: 100px 100px 0 100px;
 }

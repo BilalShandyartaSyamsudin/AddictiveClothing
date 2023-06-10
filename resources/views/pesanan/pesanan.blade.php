@@ -17,7 +17,7 @@
                         <th>Harga</th>
                         <th>Alamat</th>
                         <th>Status</th>
-                        <th>Bayar</th>
+                        {{-- <th>Bayar</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@
                             <td>{{ $item->item->harga }}</td>
                             <td>{{ $item->alamat }}</td>
                             <td>{{ $item->status }}</td>
-                            <td><a class="btn btn-success" href="">Bayar</a></td>
+                            {{-- <td><a class="btn btn-success" href="{{ route('bayar', ['id' => $item->id]) }}">Bayar</a></td> --}}
                         </tr>
                     @endforeach
                 </tbody>
