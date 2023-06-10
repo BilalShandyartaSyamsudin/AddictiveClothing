@@ -57,7 +57,7 @@
                         </div>
                         <div class="btn-psn">
                             <a href="{{ route('checkout', $barang->id_barang) }}">
-                                <span class="btn btn-primary">Pesan</span>
+                                <span class="btn-pesan">Pesan</span>
                             </a>
                         </div>
                     </div>

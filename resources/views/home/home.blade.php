@@ -103,36 +103,6 @@
                                             <button type="button" class="btn btn-outline-primary">Detail Produk</button>
                                         </a>
                                     </div>
-                                    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js">
-                                        $(document).ready(function() {
-                                            $('.add-to-favorite').click(function() {
-                                                var barangId = $(this).data('barang-id');
-                                                var csrfToken = $(this).data('csrf-token');
-
-                                                $.ajax({
-                                                    url: "{{ route('add.favorite') }}",
-                                                    type: "POST",
-                                                    data: {
-                                                        barang_id: barangId,
-                                                        _token: csrfToken
-                                                    },
-                                                    success: function(response) {
-                                                        if (response.success) {
-                                                            // Tampilkan pesan sukses jika berhasil menambahkan barang ke favorit
-                                                            alert(response.success);
-                                                        } else {
-                                                            // Tampilkan pesan error jika barang sudah ada di favorit
-                                                            alert(response.error);
-                                                        }
-                                                    },
-                                                    error: function(xhr) {
-                                                        // Tampilkan pesan error jika terjadi kesalahan pada server
-                                                        alert('Terjadi kesalahan pada server.');
-                                                    }
-                                                });
-                                            });
-                                        });
-                                    </script> --}}
                                 </div>
                             </div>
                         </div>
@@ -154,12 +124,14 @@
     <!-- About Us -->
     <section id="kami">
         <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+            </div>
             <div class="section-title about" style="display: flex">
                 <div class="about_us_img">
                     <img src="{{ asset('frontend/assets/img/orang.png') }}" alt="">
                 </div>
                 <div class="about_us_text">
-                    <h2>Tentang Kami</h2>
                     <p class="text_about">Addictive Clothing Store, sebuah toko baju distro dari Kota Kediri yang buka sejak
                         2021.
                         Usaha ini diciptakan oleh 3 orang remaja asal kediri
